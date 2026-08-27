@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#020914">
+<meta property="og:title" content="Kedarnath • Badrinath Trip">
+<meta property="og:description" content="Live countdown to 17 October 2026 • 6:00 PM">
+<title>Kedarnath • Badrinath Trip Countdown</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;min-height:100%;background:#020914}
+body{display:flex;justify-content:center;font-family:Georgia,"Times New Roman",serif}
+.page{position:relative;width:100%;max-width:520px;min-height:100svh;overflow:hidden;background:#020914;color:#fff}
+.background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
+.shade{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,#02081725 0%,#02081708 42%,#020817a0 100%)}
+.content{position:relative;z-index:2;min-height:100svh;padding:6% 3.2% 5%;display:flex;flex-direction:column;align-items:center;text-align:center}
+.om{font-size:39px;line-height:1;color:#f0ad3a;text-shadow:0 0 18px #f0ad3a55}
+.kicker{margin-top:5px;font:800 10px/1.2 system-ui,sans-serif;letter-spacing:.30em;color:#ffc45b;text-shadow:0 2px 7px #000}
+.rule{width:54%;height:1px;margin:8px auto 12px;background:linear-gradient(90deg,transparent,#e9a936,transparent)}
+h1{margin:0;font-size:clamp(32px,9vw,52px);line-height:.98;font-weight:700;color:#fff;text-shadow:0 3px 15px #000}
+.subtitle{margin:11px 0 16px;font:800 15px/1.2 system-ui,sans-serif;letter-spacing:.18em;color:#ffc45b;text-shadow:0 2px 8px #000}
+
+/* FOUR COUNTDOWN CARDS IN ONE LINE */
+.countdown{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.box{
+ height:126px;min-width:0;border:1px solid #e0ad4d99;border-radius:13px;
+ background:linear-gradient(145deg,#03172df5,#020b19f5);
+ box-shadow:0 9px 22px #0009,inset 0 1px #ffffff12;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+}
+.icon{height:19px;color:#f0ad3a;font:18px/1 system-ui,sans-serif}
+.number{
+ margin-top:5px;color:#fff;font:700 clamp(29px,8vw,46px)/.95 Georgia,serif;
+ font-variant-numeric:tabular-nums;text-shadow:0 2px 8px #000;
+}
+.label{
+ margin-top:7px;color:#ffc45b;font:800 clamp(7px,2.1vw,10px)/1 system-ui,sans-serif;
+ letter-spacing:.10em;white-space:nowrap;
+}
+.event{
+ margin-top:13px;width:100%;padding:9px 2px;border-top:1px solid #e0ad4d99;border-bottom:1px solid #e0ad4d99;
+ background:#061326eb;color:#fff;font:800 clamp(12px,3.5vw,17px)/1.25 system-ui,sans-serif;letter-spacing:.035em;
+}
+.journey{margin-top:7px;padding:5px 12px;background:#061326df;color:#fff;font:800 9px/1 system-ui,sans-serif;letter-spacing:.16em}
+.footer{margin-top:auto;padding-top:12px;color:#fff;font:800 8px/1 system-ui,sans-serif;letter-spacing:.20em;text-shadow:0 2px 7px #000}
+
+@media(max-width:380px){
+ .content{padding-left:2.5%;padding-right:2.5%;padding-top:5%}
+ .countdown{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px}
+ .box{height:112px;border-radius:10px}
+ .number{font-size:27px}.label{font-size:6.5px;letter-spacing:.055em}
+ .icon{font-size:15px}.subtitle{margin-bottom:14px;font-size:14px}
+ .event{margin-top:10px;font-size:12px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+ <img class="background" src="kedarnath-badrinath-final-background.jpg" alt="">
+ <div class="shade"></div>
+ <main class="content">
+  <div class="om">ॐ</div>
+  <div class="kicker">OUR HIMALAYAN JOURNEY</div>
+  <div class="rule"></div>
+  <h1>Kedarnath • Badrinath</h1>
+  <div class="subtitle">TRIP COUNTDOWN</div>
+
+  <section class="countdown" aria-label="Live countdown">
+   <div class="box"><div class="icon">▣</div><div class="number" id="days">00</div><div class="label">DAYS</div></div>
+   <div class="box"><div class="icon">◷</div><div class="number" id="hours">00</div><div class="label">HOURS</div></div>
+   <div class="box"><div class="icon">⌛</div><div class="number" id="minutes">00</div><div class="label">MINUTES</div></div>
+   <div class="box"><div class="icon">◴</div><div class="number" id="seconds">00</div><div class="label">SECONDS</div></div>
+  </section>
+
+  <div class="event">17 OCTOBER 2026&nbsp; • &nbsp;6:00 PM</div>
+  <div class="journey" id="journey">THE JOURNEY BEGINS</div>
+  <div class="footer">KEDARNATH • BADRINATH • HIMALAYAS</div>
+ </main>
+</div>
+<script>
+(function(){
+ const target=Date.parse("2026-10-17T18:00:00+05:30");
+ const ids=["days","hours","minutes","seconds"];
+ function update(){
+  let x=Math.max(0,target-Date.now());
+  const d=Math.floor(x/86400000);x-=d*86400000;
+  const h=Math.floor(x/3600000);x-=h*3600000;
+  const m=Math.floor(x/60000);x-=m*60000;
+  const s=Math.floor(x/1000);
+  [d,h,m,s].forEach((v,i)=>document.getElementById(ids[i]).textContent=String(v).padStart(2,"0"));
+  if(Date.now()>=target)document.getElementById("journey").textContent="THE JOURNEY HAS BEGUN";
+ }
+ update();setInterval(update,1000);
+})();
+</script>
+</body>
+</html>
